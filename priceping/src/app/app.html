@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Track Product Price</h2>
+  <form (ngSubmit)="trackProduct()">
+    <input
+      type="text"
+      [(ngModel)]="url"
+      name="url"
+      placeholder="Enter Product URL"
+      required
+    />
+    <input
+      type="number"
+      [(ngModel)]="threshold_price"
+      name="threshold_price"
+      placeholder="Enter Threshold Price"
+      required
+    />
+    <input
+      type="text"
+      [(ngModel)]="phone"
+      name="phone"
+      placeholder="Enter Phone Number"
+      required
+    />
+    <button type="submit">Start Tracking</button>
+  </form>
+  <p
+    id="message"
+    [class.success]="messageType === 'success'"
+    [class.error]="messageType === 'error'"
+  >
+    {{ message }}
+  </p>
+</div>
